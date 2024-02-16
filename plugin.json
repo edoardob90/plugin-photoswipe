@@ -1,0 +1,8 @@
+{
+  "version": "0.1.0",
+  "title": "PhotoSwipe plugin for Micro.blog",
+  "description": "A simple plugin to add PhotoSwipe to your Micro.blog site.",
+  "includes": [
+    "photoswipe.html"
+  ]
+}
