@@ -3,6 +3,7 @@
   "title": "PhotoSwipe plugin for Micro.blog",
   "description": "A simple plugin to add PhotoSwipe to your Micro.blog site.",
   "includes": [
-    "photoswipe.html"
+    "/css/photoswipe.css",
+    "/css/photoswipe-caption.css"
   ]
 }
