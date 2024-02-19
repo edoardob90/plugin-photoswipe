@@ -1,0 +1,22 @@
+{{ $URL := .Destination | safeURL }}
+{{ with resources.GetRemote $URL }}
+{{ with .Err }}
+    {{ errorf "%s" . }}
+{{ else }}
+<div class="pswp-gallery">
+    <div class="pswp-gallery__item">
+        <a href="{{ .RelPermalink }}" 
+        data-pswp-width="{{ .Width }}" data-pswp-height="{{ .Height }}"
+        {{ with $.Title }} title="{{ . }}" {{ end }}
+        >
+        <img src ="{{ .RelPermalink }}" alt="{{ $.Text }}" {{ with $.Title }} title="{{ . }}" {{ end }} />
+        </a>
+        <div class="pswp-caption-content">
+            {{ $.Text }}
+        </div>
+    </div>
+</div>
+{{ end }}
+{{ else }}
+    {{ errorf "Unable to get remote resource %q" $URL }}
+{{ end }}
